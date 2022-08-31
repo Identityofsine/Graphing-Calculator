@@ -25,12 +25,12 @@ class Equation{
                 printf("%c sex", t);
             }
         };
-        double inputX(float x){
-            double y;
+        float inputX(float x){
+            float y = 0;
             int len = varLength;
             for(int i = 0; i < len; ++i){
-                double _temp = this->vars[i].getY(x);
-                printf("i:%d, f(x):%s%s, y:%f\n",i, this->vars[i].isNegative() ? "-" : "",this->vars[i].variables,_temp);
+                float _temp = this->vars[i].getY(x);
+                //printf("i:%d, f(x):%s%s, y:%f\n",i, this->vars[i].isNegative() ? "-" : "",this->vars[i].variables,_temp);
                 y += _temp;
             }
             return y;

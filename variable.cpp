@@ -38,7 +38,7 @@ void Variable::parseVars(){
     //printf("\nstring : %s, power:%f\n", variables, power);
 }
 
-double Variable::getY(float x){
+float Variable::getY(float x){
     //printf("c:%f", constant);
     return this->isNeg ? -(constant * pow(x, power)) : (constant * pow(x, power));
 }

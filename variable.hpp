@@ -17,7 +17,7 @@
             this->isNeg = isNeg;
             }
             void parseVars();
-            double getY(float x);
+            float getY(float x);
             bool isNegative(){return isNeg;}
             const char* getChar(){ return variables;}
 
