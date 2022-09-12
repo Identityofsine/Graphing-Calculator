@@ -20,4 +20,4 @@ int main(){
 <sub>Eventually, equations will be able to be inputed from the console.</sub>
 
 ### Build and Run
->g++ main.cpp variable.cpp equation.cpp -o calc.out; ./calc.out;
+>g++ main.cpp variable.cpp equation.cpp table.cpp -o calc.out; ./calc.out;
