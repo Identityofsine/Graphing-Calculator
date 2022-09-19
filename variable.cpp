@@ -1,21 +1,44 @@
 #include "variable.hpp"
 
+char* appendCharToCharArray(char* array, char a)
+{
+    size_t len = strlen(array);
+
+    char* ret = new char[len+2];
+
+    strcpy(ret, array);    
+    ret[len] = a;
+    ret[len+1] = '\0';
+
+    return ret;
+}
+
 void Variable::parseVars(){
     bool isNeg = true;
     int varLen = strlen(variables) + 1;
     int i;
     int _x = 0;
-    this->power = 0;
+    this->power = 1;
     this->constant = 1;
     //std::cout << variables << std::endl;
     for(i = 0; i < varLen; ++i){
         if(i == 0){
-            if((char)variables[i] != 'x'){
-                this->constant = strtod(&variables[i], NULL);
-                continue;
-            } 
-            else{}
-            this->constant = 1.0;
+            int j = 0;
+            char* constant = "";
+                while(variables[j] != NULL && variables[j] != 'x' && variables[j] != '^'){ 
+                    // keep checking if there is constants before X.
+                    if((char)variables[i] != 'x'){
+                       constant = appendCharToCharArray(constant, (char)variables[j]);
+                    } 
+                    j++;
+                }
+                if(constant == ""){
+                    this->constant = 1.0;
+                    continue;
+                } else{
+                        this->constant = strtod(constant, NULL);
+                        std::cout << this->constant << std::endl;
+                }
         }
         if(variables[i] == 'x'){
             _x + 1;
@@ -31,7 +54,7 @@ void Variable::parseVars(){
                 std::cout << "Missing Power..." << std::endl;
                 this->power = _x + 1;
             }
-            
+            continue;
         }
     }
     this->power = this->power + _x;

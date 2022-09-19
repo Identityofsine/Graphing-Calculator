@@ -50,7 +50,7 @@ class Graph{
     }
     void plotPoint(int x, int y){
         int middleX = (int)clip(size / 2 - x, 0, size - 1);
-        int middleY = (int)clip(size / 2 + (-1 * y), 0, size - 1);
+        int middleY = (int)clip(size / 2 + (1 * y), 0, size - 1);
         graph[middleY][middleX] = 'x';
     }
 };
