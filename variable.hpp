@@ -14,7 +14,7 @@
                 strcpy(temp, sorted);
                 variables = strdup(temp);
                 this->parseVars();
-            this->isNeg = isNeg;
+                this->isNeg = isNeg;
             }
             void parseVars();
             float getY(float x);

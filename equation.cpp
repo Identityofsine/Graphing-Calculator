@@ -47,6 +47,6 @@ void Equation::parseString(){
     free(_copy);
     free(_variables);
     this->vars = variables;
-    this->varLength = i - q ;
+    this->varLength = i - q;
     //free(variables);
 }
